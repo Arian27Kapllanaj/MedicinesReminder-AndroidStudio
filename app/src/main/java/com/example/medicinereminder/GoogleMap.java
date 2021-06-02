@@ -3,7 +3,9 @@ package com.example.medicinereminder;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class GoogleMap extends AppCompatActivity {
 
@@ -20,5 +22,9 @@ public class GoogleMap extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.frame_layout, fragment)
                 .commit();
+    }
+    public void main(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 }
