@@ -53,7 +53,7 @@ public class ReminderActivity extends AppCompatActivity implements OnDialogClose
             }
         });
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerViewTouchHelper(adapter));
-        //ItemTouchHelper.attachToRecyclerView(mRecyclerview);
+        itemTouchHelper.attachToRecyclerView(mRecyclerview);
     }
 
     @Override

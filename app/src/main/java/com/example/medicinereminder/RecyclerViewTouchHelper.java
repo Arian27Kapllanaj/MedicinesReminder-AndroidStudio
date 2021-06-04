@@ -2,12 +2,16 @@ package com.example.medicinereminder;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Canvas;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.medicinereminder.Adapter.MedicinesAdapter;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
 
@@ -48,5 +52,19 @@ public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
         else {
             adapter.editMedicine(position);
         }
+    }
+
+    @Override
+    public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+        new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adapter.getContext(), R.color.design_default_color_primary_dark))
+                .addSwipeLeftActionIcon(R.drawable.ic_baseline_edit)
+                .addSwipeRightBackgroundColor(android.R.color.holo_red_light)
+                .addSwipeRightActionIcon(R.drawable.ic_baseline_delete)
+                .create()
+                .decorate();
+
+        super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
     }
 }
