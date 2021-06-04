@@ -19,7 +19,8 @@
             android:padding="8dp"
             android:id="@+id/mcheckbox"
             android:text="This is Medicine 1"
-            android:paddingStart="8dp"/>
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp" />
     </RelativeLayout>
 
 

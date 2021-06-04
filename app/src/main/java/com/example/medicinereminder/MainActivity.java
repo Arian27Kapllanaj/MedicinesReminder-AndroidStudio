@@ -26,4 +26,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), GoogleMap.class));
         finish();
     }
+
+    public void reminder(View view) {
+        startActivity(new Intent(getApplicationContext(), ReminderActivity.class));
+        finish();
+    }
 }
