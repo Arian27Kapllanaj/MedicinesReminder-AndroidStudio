@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#BAB7B7"
     tools:context=".ReminderActivity">
 
     <TextView
@@ -43,5 +44,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView"
         app:layout_constraintVertical_bias="0.957" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="53dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        app:backgroundTint="#4CAF50"
+        app:icon="@drawable/ic_baseline_subdirectory_arrow_left_24"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="main"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
